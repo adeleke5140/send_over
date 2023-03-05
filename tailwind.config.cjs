@@ -17,6 +17,9 @@ module.exports = {
           ...defaultTheme.fontFamily.sans,
         ],
       },
+      gridTemplateRows: {
+        layout: "min-content auto",
+      },
     },
   },
   plugins: [],
