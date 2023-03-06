@@ -1,3 +1,7 @@
+---
+import Button from "./button.astro";
+---
+
 <main class="w-full">
   <div
     class="h-full grid grid-cols-3 grid-rows-layout w-full border-t-2 border-color-dark"
@@ -24,11 +28,7 @@
         Ever been frustrated by the inability to <br /> quickly share a link from
         your Pc to your <br /> Mac and vice-versa, sendover is here to <br /> help.
       </p>
-      <button
-        class="text-white px-16 py-3 bg-color-dark rounded uppercase font-medium text-2xl"
-      >
-        Paste Link</button
-      >
+      <Button name="Paste Link" />
     </section>
 
     <section class="flex flex-col col-span-2 bg-color-yellow p-6 pt-24">
@@ -39,10 +39,7 @@
         placeholder="Paste link here..."
       >
       </textarea>
-      <button
-        class="text-white px-24 py-3 bg-color-dark rounded uppercase self-end font-medium text-2xl"
-        >Send</button
-      >
+      <div class="self-end relative top-2"><Button name="send" /></div>
     </section>
   </div>
 </main>
