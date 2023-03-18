@@ -1,27 +1,14 @@
 ---
 import { TextArea } from "./reactComponents/textarea";
 import { Button } from "./reactComponents/button";
+import { GridTop } from "./reactComponents/gridTop";
 ---
 
 <main class="w-full">
   <div
     class="h-full grid grid-cols-3 grid-rows-layout w-full border-t-2 border-color-dark"
   >
-    <p
-      class="p-6 border-r-2 border-b-2 border-color-dark font-medium text-base"
-    >
-      send to: <span class="pl-4 text-[32px] font-semibold">Windows</span>
-    </p>
-    <p
-      class="p-6 border-r-2 border-b-2 border-color-dark font-medium text-base"
-    >
-      Network: <span class="pl-4 text-[32px] font-semibold">Wifi</span>
-    </p>
-    <p class="p-6 border-b-2 border-color-dark font-medium text-base">
-      Current Device: <span
-        class="device uppercase pl-4 text-[32px] font-semibold"></span>
-    </p>
-
+    <GridTop client:load />
     <section class="bg-color-pink p-6 pt-24 h-screen">
       <h2 class="font-semibold text-5xl leading-[50px] mb-4">
         Share link <br /> from PC to <br /> Mac over Wifi
@@ -41,29 +28,3 @@ import { Button } from "./reactComponents/button";
     </section>
   </div>
 </main>
-
-<script>
-  const userDevice = document.querySelector(".device")!;
-
-  (function getUserAgent() {
-    if (!"navigator in window") {
-      return "unknown";
-    }
-
-    const platform = (
-      navigator.userAgent.platform || navigator.platform
-    ).toLowerCase();
-
-    if (platform.startsWith("win")) {
-      return (userDevice.textContent = "windows");
-    }
-    if (platform.startsWith("mac")) {
-      return (userDevice.textContent = "macos");
-    }
-    if (platform.startsWith("linux")) {
-      return (userDevice.textContent = "linux");
-    }
-
-    return (userDevice.textContent = "unknown");
-  })();
-</script>
