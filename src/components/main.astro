@@ -1,5 +1,6 @@
 ---
-import Button from "./button.astro";
+import { TextArea } from "./reactComponents/textarea";
+import { Button } from "./reactComponents/button";
 ---
 
 <main class="w-full">
@@ -17,7 +18,8 @@ import Button from "./button.astro";
       Network: <span class="pl-4 text-[32px] font-semibold">Wifi</span>
     </p>
     <p class="p-6 border-b-2 border-color-dark font-medium text-base">
-      Current Device: <span class="pl-4 text-[32px] font-semibold">MACOS</span>
+      Current Device: <span
+        class="device uppercase pl-4 text-[32px] font-semibold"></span>
     </p>
 
     <section class="bg-color-pink p-6 pt-24 h-screen">
@@ -28,18 +30,40 @@ import Button from "./button.astro";
         Ever been frustrated by the inability to <br /> quickly share a link from
         your Pc to your <br /> Mac and vice-versa, sendover is here to <br /> help.
       </p>
-      <Button name="Paste Link" />
+      <Button name="Paste Link" client:idle />
     </section>
 
     <section class="flex flex-col col-span-2 bg-color-yellow p-6 pt-24">
-      <textarea
-        class="pt-4 font-mono pl-4 block resize-none w-full h-72 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-black"
-        name="link"
-        id="link"
-        placeholder="Paste link here..."
-      >
-      </textarea>
-      <div class="self-end relative top-2"><Button name="send" /></div>
+      <TextArea client:idle />
+      <div class="self-end relative top-2">
+        <Button name="send" client:idle />
+      </div>
     </section>
   </div>
 </main>
+
+<script>
+  const userDevice = document.querySelector(".device")!;
+
+  (function getUserAgent() {
+    if (!"navigator in window") {
+      return "unknown";
+    }
+
+    const platform = (
+      navigator.userAgent.platform || navigator.platform
+    ).toLowerCase();
+
+    if (platform.startsWith("win")) {
+      return (userDevice.textContent = "windows");
+    }
+    if (platform.startsWith("mac")) {
+      return (userDevice.textContent = "macos");
+    }
+    if (platform.startsWith("linux")) {
+      return (userDevice.textContent = "linux");
+    }
+
+    return (userDevice.textContent = "unknown");
+  })();
+</script>
