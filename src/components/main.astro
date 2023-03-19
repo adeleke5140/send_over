@@ -22,8 +22,9 @@ import { GridTop } from "./reactComponents/gridTop";
 
     <section class="flex flex-col col-span-2 bg-color-yellow p-6 pt-24">
       <TextArea client:idle />
-      <div class="self-end relative top-2">
-        <Button name="send" client:idle />
+      <div class="self-end relative top-2 flex gap-6">
+        <Button name="send" client:load />
+        <Button name="receive" client:load />
       </div>
     </section>
   </div>
