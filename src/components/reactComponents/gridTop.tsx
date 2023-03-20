@@ -1,15 +1,21 @@
+import { useEffect } from "react";
+
 export const GridTop = () => {
+  useEffect(() => {
+    const navigatorEl = navigator;
+    console.log(navigatorEl);
+  }, []);
   return (
     <>
       <p className="p-6 border-r-2 border-b-2 border-color-dark font-medium text-base">
-        send to: <span className="pl-4 text-[32px] font-semibold">Windows</span>
+        User:
+        <span className="pl-4 text-[32px] font-semibold">Not Logged In</span>
       </p>
-      <p className="p-6 border-r-2 border-b-2 border-color-dark font-medium text-base">
-        Network: <span className="pl-4 text-[32px] font-semibold">Wifi</span>
-      </p>
-      <p className="p-6 border-b-2 border-color-dark font-medium text-base">
-        Current Device:{" "}
-        <span className="uppercase pl-4 text-[32px] font-semibold">MacOS</span>
+      <p className="p-6 border-b-2 border-color-dark font-medium text-base hover:bg-color-yellow cursor-pointer">
+        <span className="uppercase pl-4 text-[32px] font-semibold">
+          {" "}
+          Get Access
+        </span>
       </p>
     </>
   );
