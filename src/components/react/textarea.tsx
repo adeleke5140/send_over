@@ -6,8 +6,13 @@ interface TextAreaProps {
 }
 
 const TextArea = ({ placeholder, value }: TextAreaProps) => {
-  console.log(value);
   const [text, setText] = useState("");
+
+  useEffect(() => {
+    if (value) {
+      setText(value);
+    }
+  }, [value]);
 
   return (
     <textarea
@@ -15,7 +20,7 @@ const TextArea = ({ placeholder, value }: TextAreaProps) => {
       name="link"
       id="link"
       placeholder={placeholder}
-      value={text || value}
+      value={text}
       onChange={(e) => setText(e.target.value)}
     />
   );
