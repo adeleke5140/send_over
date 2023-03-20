@@ -1,7 +1,7 @@
 ---
 import "../styles/globals.css";
 import Header from "../components/header.astro";
-import Main from "../components/main.astro";
+import { Main } from "../components/react/main";
 ---
 
 <html lang="en">
@@ -12,8 +12,10 @@ import Main from "../components/main.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Sendover</title>
   </head>
-  <body class="overflow-hidden">
-    <Header />
-    <Main />
+  <body class="min-h-screen">
+    <div class="h-full w-full">
+      <Header />
+      <Main client:load />
+    </div>
   </body>
 </html>
