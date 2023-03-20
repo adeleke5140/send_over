@@ -2,14 +2,12 @@ import { useEffect, useState } from "react";
 
 interface TextAreaProps {
   placeholder: string;
+  value?: string;
 }
 
-const TextArea = ({ placeholder }: TextAreaProps) => {
+const TextArea = ({ placeholder, value }: TextAreaProps) => {
+  console.log(value);
   const [text, setText] = useState("");
-
-  // useEffect(() => {
-  //   navigator.clipboard.readText().then((content) => setText(content));
-  // }, []);
 
   return (
     <textarea
@@ -17,7 +15,7 @@ const TextArea = ({ placeholder }: TextAreaProps) => {
       name="link"
       id="link"
       placeholder={placeholder}
-      value={text}
+      value={text || value}
       onChange={(e) => setText(e.target.value)}
     />
   );
