@@ -6,6 +6,9 @@ interface SiteLeftProps {
 }
 
 export function SiteLeft({ setLink }: SiteLeftProps) {
+  const handleClick = () => {
+    console.log("clicked paste link button");
+  };
   return (
     <section className="basis-1/4 bg-color-pink p-6 pt-24">
       <h2 className="font-semibold text-5xl leading-[50px] mb-4">
@@ -15,7 +18,7 @@ export function SiteLeft({ setLink }: SiteLeftProps) {
         Ever been frustrated by the inability to quickly share a link from your
         Pc to your Mac and vice-versa, sendover is here to help.
       </p>
-      <Button name="Paste Link" />
+      <Button name="Paste Link" callback={handleClick} />
     </section>
   );
 }
