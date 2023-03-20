@@ -2,6 +2,8 @@
 import { TextArea } from "./reactComponents/textarea";
 import { Button } from "./reactComponents/button";
 import { GridTop } from "./reactComponents/gridTop";
+import { SendLink } from "./reactComponents/sendLink";
+import { ReceiveLink } from "./reactComponents/receiveLink";
 ---
 
 <main class="h-full border-t-2 border-color-dark">
@@ -18,12 +20,9 @@ import { GridTop } from "./reactComponents/gridTop";
       <Button name="Paste Link" client:idle />
     </section>
 
-    <section class="flex-1 flex flex-col bg-color-yellow p-6 pt-24">
-      <TextArea client:load />
-      <div class="self-end relative top-2 flex gap-6">
-        <Button name="send" client:load />
-        <Button name="receive" client:load />
-      </div>
+    <section class="flex-1 flex gap-4 bg-color-yellow p-6 pt-24">
+      <SendLink client:load />
+      <ReceiveLink client:load />
     </section>
   </div>
 </main>
