@@ -1,10 +1,6 @@
 import { useEffect } from "react";
 
 export const Nav = () => {
-  useEffect(() => {
-    const navigatorEl = navigator;
-    console.log(navigatorEl);
-  }, []);
   return (
     <section className="flex justify-between border-b-2 border-color-dark">
       <p className="p-6 border-l-2 border-r-2 border-color-dark font-medium text-base hover:bg-color-pink cursor-pointer">
