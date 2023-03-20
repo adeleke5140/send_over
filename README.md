@@ -4,12 +4,12 @@ A minimal app I created for myself to share files between windows and macos. It 
 
 ## Stack
 An exploration and experimentation of the ff technologies: \
-`Astro`, \
+`Astro`, 
 
-`React`, \
+`React`, 
 
-`Typescript` \
+`Typescript` 
 
-`TailwindCSS`, \
+`TailwindCSS`, 
 
 `Supabase` 
