@@ -6,8 +6,10 @@ interface SiteLeftProps {
 }
 
 export function SiteLeft({ setLink }: SiteLeftProps) {
-  const handleClick = () => {
-    console.log("clicked paste link button");
+  const handleClick = async () => {
+    const link = await navigator.clipboard.readText();
+
+    if (link.startsWith("http")) setLink(link);
   };
   return (
     <section className="basis-1/4 bg-color-pink p-6 pt-24">
