@@ -12,8 +12,10 @@ import Main from "../components/main.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Sendover</title>
   </head>
-  <body>
-    <Header />
-    <Main />
+  <body class="flex overflow-hidden min-h-screen bg-green-400">
+    <div class="flex-grow w-full">
+      <Header />
+      <Main />
+    </div>
   </body>
 </html>
