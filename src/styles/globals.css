@@ -9,4 +9,8 @@
         font-style: normal;
         font-weight: 300 400 500 700;
     }
+
+    html, body {
+        height: 100%;
+    }
 }
