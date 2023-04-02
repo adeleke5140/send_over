@@ -12,13 +12,12 @@ export function SiteLeft({ setLink }: SiteLeftProps) {
     if (link.startsWith("http")) setLink(link);
   };
   return (
-    <section className="basis-1/4 bg-color-pink p-6 pt-24">
-      <h2 className="font-semibold text-5xl leading-[50px] mb-4">
+    <section className="basis-1/4 bg-color-pink p-6 pt-12 md:pt-24">
+      <h2 className="font-semibold text-4xl md:text-5xl md:leading-[50px] mb-4">
         Share link from one device to another
       </h2>
-      <p className="font-medium text-base mb-12">
-        Ever been frustrated by the inability to quickly share a link from your
-        Pc to your Mac and vice-versa, sendover is here to help.
+      <p className="font-medium font-sans text-base mb-4 sm:mb-12">
+        Share links from one platform to another over the web.
       </p>
       <Button name="Paste Link" callback={handleClick} />
     </section>
