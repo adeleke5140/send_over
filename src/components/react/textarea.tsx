@@ -25,7 +25,7 @@ const TextArea = ({
   return (
     <>
       <textarea
-        className="pt-4 inset-2 font-mono pl-4 block resize-none w-full h-[21.4rem] rounded mb-4 focus:outline-none focus:ring-2 focus:ring-black"
+        className="pt-4 inset-2 font-mono pl-4 block resize-none w-full md:h-[21.4rem] rounded mb-4 focus:outline-none focus:ring-2 focus:ring-black"
         name="link"
         id="link"
         placeholder={placeholder}
