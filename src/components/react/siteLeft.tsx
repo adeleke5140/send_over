@@ -16,7 +16,7 @@ export function SiteLeft({ setLink }: SiteLeftProps) {
       <h2 className="font-semibold text-4xl md:text-5xl md:leading-[50px] mb-4">
         Share link from one device to another
       </h2>
-      <p className="font-medium font-sans text-base mb-12">
+      <p className="font-medium font-sans text-base mb-4 sm:mb-12">
         Share links from one platform to another over the web.
       </p>
       <Button name="Paste Link" callback={handleClick} />
