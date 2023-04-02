@@ -12,7 +12,7 @@ export function Main() {
       <Nav />
       <div className="flex flex-col md:flex-row">
         <SiteLeft setLink={setLink} />
-        <section className="flex-1 flex gap-4 bg-color-yellow p-6 pt-24">
+        <section className="flex-1 flex flex-col md:flex-row gap-4 bg-color-yellow p-6 pt-24">
           <SendLink link={link} />
           <ReceiveLink />
         </section>
